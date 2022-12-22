@@ -22,7 +22,7 @@
 	
 	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,4,10);
 	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,1,20);
-	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,1,30);
+	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(2,1,30);
 	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,2,20);
 	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,3,50);
-	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(1,4,10);
+	INSERT INTO asignaciones(id_proyecto,id_tecnico,porcentaje) VALUES(3,4,10);
