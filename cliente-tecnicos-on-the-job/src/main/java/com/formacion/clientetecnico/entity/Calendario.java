@@ -19,8 +19,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name="calendarios")
-@Getter
-@Setter
 public class Calendario implements Serializable{
 
 	@Id
@@ -39,6 +37,68 @@ public class Calendario implements Serializable{
 	@JoinColumn(name="id_tecnico")
 	private Tecnico tecnico;
 	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+	public int getMes() {
+		return mes;
+	}
+
+
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+
+
+	public int getAño() {
+		return año;
+	}
+
+
+
+	public void setAño(int año) {
+		this.año = año;
+	}
+
+
+
+	public int getHoras_trabajadas() {
+		return horas_trabajadas;
+	}
+
+
+
+	public void setHoras_trabajadas(int horas_trabajadas) {
+		this.horas_trabajadas = horas_trabajadas;
+	}
+
+
+
+	public Tecnico getTecnico() {
+		return tecnico;
+	}
+
+
+
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
+	}
+
+
+
 	private static final long serialVersionUID = 1L;
 	
 }
