@@ -1,7 +1,5 @@
 package com.formacion.clientetecnico.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -15,9 +13,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="asignaciones")
-@Getter
-@Setter
-public class Asignacion implements Serializable{
+public class Asignacion{
 	
 	@ManyToMany(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
@@ -30,5 +26,31 @@ public class Asignacion implements Serializable{
 	private Proyecto proyecto;
 	
 	private float porcentaje;
+
+	public Tecnico getTecnico() {
+		return tecnico;
+	}
+
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
+	}
+
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
+	}
+
+	public float getPorcentaje() {
+		return porcentaje;
+	}
+
+	public void setPorcentaje(float porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+	
+	
 
 }

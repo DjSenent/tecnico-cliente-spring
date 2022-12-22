@@ -23,7 +23,7 @@ public class Tecnico implements Serializable{
 	private long id;
 	
 	@Column(nullable = false)
-	private String nombre;
+	private @Getter @Setter String nombre;
 	
 	private String apellido1;
 	
@@ -34,6 +34,66 @@ public class Tecnico implements Serializable{
 	
 	
 	
+	public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public String getApellido1() {
+		return apellido1;
+	}
+
+
+
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
+	}
+
+
+
+	public String getApellido2() {
+		return apellido2;
+	}
+
+
+
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
+
+
+
+	public String getExperiencia() {
+		return experiencia;
+	}
+
+
+
+	public void setExperiencia(String experiencia) {
+		this.experiencia = experiencia;
+	}
+
+
+
 	private static final long serialVersionUID = 1L;
 	
 }
