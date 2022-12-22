@@ -43,11 +43,4 @@ public class ProyectoServiceImpl implements ProyectoService{
 		return proyectoBorrado;
 	}
 
-	/*
-	@Override
-	@Transactional(readOnly = true)
-	public List<Tecnico> mostarTecnicosAsignados(long id) {
-		return (List<Tecnico>) repositorio.findById(id);
-	}
-	*/
 }
