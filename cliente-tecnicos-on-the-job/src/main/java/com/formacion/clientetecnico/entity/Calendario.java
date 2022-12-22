@@ -28,6 +28,7 @@ public class Calendario implements Serializable{
 	@Column(nullable = false)
 	private int mes;
 	
+	@Column(name = "anyo")
 	private int año;
 	
 	private int horas_trabajadas;

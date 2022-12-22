@@ -10,10 +10,14 @@ public interface AsignacionService {
 
 			public List<Asignacion> mostrarAsignaciones();
 			
-			public Asignacion buscarAsignacion(long id_tecnico, long id_proyecto);
+			public Asignacion buscarAsignacion(long id);
 			
 			public Asignacion guardarAsignacion(Asignacion asignacion);
 			
-			public Asignacion borrarAsignacion(long id_tecnico, long id_proyecto);
+			public Asignacion borrarAsignacion(long id);
+			
+			public List<Asignacion> buscarAsignacionPorTecnico(long id_tecnico);
+			
+			public List<Asignacion> buscarAsignacionPorProyecto(long id_proyecto);
 			
 }

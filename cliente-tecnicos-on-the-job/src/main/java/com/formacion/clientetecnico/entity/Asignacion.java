@@ -1,32 +1,59 @@
 package com.formacion.clientetecnico.entity;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name="asignaciones")
-public class Asignacion{
+public class Asignacion implements Serializable{
 	
-	@ManyToMany(fetch=FetchType.LAZY)
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@JoinColumn(name="id_tecnico")
 	private Tecnico tecnico;
 	
-	@ManyToMany(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@JoinColumn(name="id_proyecto")
 	private Proyecto proyecto;
 	
 	private float porcentaje;
+	
+	
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public float getPorcentaje() {
+		return porcentaje;
+	}
+
+	public void setPorcentaje(float porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+	
 	public Tecnico getTecnico() {
 		return tecnico;
 	}
@@ -43,14 +70,7 @@ public class Asignacion{
 		this.proyecto = proyecto;
 	}
 
-	public float getPorcentaje() {
-		return porcentaje;
-	}
 
-	public void setPorcentaje(float porcentaje) {
-		this.porcentaje = porcentaje;
-	}
-	
-	
+	private static final long serialVersionUID = 1L;
 
 }

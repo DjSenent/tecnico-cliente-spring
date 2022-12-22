@@ -30,9 +30,9 @@ public class AsignacionController {
 			return servicio.mostrarAsignaciones();
 		}
 		
-		@GetMapping("asignaciones/{id_tecnico, id_proyecto}")
-		public Asignacion show(@PathVariable long id_tecnico, @PathVariable long id_proyecto) {
-			return servicio.buscarAsignacion(id_tecnico, id_proyecto);
+		@GetMapping("asignaciones/{id}")
+		public Asignacion show(@PathVariable long id) {
+			return servicio.buscarAsignacion(id);
 		}
 		
 		@PostMapping("asignaciones")
@@ -42,10 +42,10 @@ public class AsignacionController {
 		}	
 		
 		
-		@PutMapping("asignaciones/{id_tecnico, id_proyecto}")
+		@PutMapping("asignaciones/{id}")
 		@ResponseStatus(HttpStatus.CREATED)
-		public Asignacion update(@PathVariable long id_tecnico, @PathVariable long id_proyecto ,@RequestBody Asignacion asignacion) {
-			Asignacion asignacionUpdate = servicio.buscarAsignacion(id_tecnico, id_proyecto);
+		public Asignacion update(@PathVariable long id,@RequestBody Asignacion asignacion) {
+			Asignacion asignacionUpdate = servicio.buscarAsignacion(id);
 			
 			asignacionUpdate.setProyecto(asignacion.getProyecto());
 			asignacionUpdate.setTecnico(asignacion.getTecnico());
@@ -55,10 +55,19 @@ public class AsignacionController {
 		}
 		
 		//ejercicio, agregar manejo de errores en este metodo
-		@DeleteMapping("asignaciones/{id_tecnico, id_proyecto}")
-		public Asignacion delete(@PathVariable long id_tecnico, @PathVariable long id_proyecto) {
-			return servicio.borrarAsignacion(id_tecnico, id_proyecto);
-			
+		@DeleteMapping("asignaciones/{id}")
+		public Asignacion delete(@PathVariable long id) {
+			return servicio.borrarAsignacion(id);
+		}
+		
+		@GetMapping("asignaciones/tecnico/{id_tecnico}")//define peticion http get
+		public List<Asignacion> showTecnico(@PathVariable long id_tecnico) {
+			return servicio.buscarAsignacionPorTecnico(id_tecnico);
+		}
+		
+		@GetMapping("asignaciones/proyecto/{id_proyecto}")//define peticion http get
+		public List<Asignacion> showProyecto(@PathVariable long id_proyecto) {
+			return servicio.buscarAsignacionPorProyecto(id_proyecto);
 		}
 		
 }

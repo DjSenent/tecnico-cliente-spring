@@ -22,8 +22,8 @@ public class AsignacionServiceImpl implements AsignacionService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public Asignacion buscarAsignacion(long id_tecnico, long id_proyecto) {
-		return repositorio.findByIdCompuesto(id_tecnico, id_proyecto);
+	public Asignacion buscarAsignacion(long id) {
+		return repositorio.findById(id).orElse(null);
 	}
 
 	@Override
@@ -34,12 +34,24 @@ public class AsignacionServiceImpl implements AsignacionService{
 
 	@Override
 	@Transactional
-	public Asignacion borrarAsignacion(long id_tecnico, long id_proyecto) {
-		Asignacion asignacionBorrada = buscarAsignacion(id_tecnico, id_proyecto);
-		repositorio.deleteByIdCompuesto(id_tecnico,id_proyecto);
+	public Asignacion borrarAsignacion(long id) {
+		Asignacion asignacionBorrada = buscarAsignacion(id);
+		repositorio.deleteById(id);
 		
 		return asignacionBorrada;
 		
 		
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Asignacion> buscarAsignacionPorTecnico(long id_tecnico) {
+		return (List<Asignacion>) repositorio.findByTecnicoId(id_tecnico);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Asignacion> buscarAsignacionPorProyecto(long id_proyecto) {
+		return (List<Asignacion>) repositorio.findByProyectoId(id_proyecto);
 	}
 }
