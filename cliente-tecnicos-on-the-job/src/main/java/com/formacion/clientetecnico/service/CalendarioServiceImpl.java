@@ -41,4 +41,10 @@ public class CalendarioServiceImpl implements CalendarioService{
 		return calendarioBorrado;
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public List<Calendario> findTecnicoCalendario(long id) {
+		return repositorio.findTecnicoCalendario(id);
+	}
+
 }

@@ -124,6 +124,11 @@ public class CalendarioController {
 		
 	}
 	
+	@GetMapping("calendarios/tecnico/{id}")
+	public List<Calendario> tecnicoId(@PathVariable long id){
+		return servicio.findTecnicoCalendario(id);
+	}
+	
 	
 
 }

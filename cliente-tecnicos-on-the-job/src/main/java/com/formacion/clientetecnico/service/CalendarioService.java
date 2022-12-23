@@ -13,5 +13,7 @@ public interface CalendarioService {
 	public Calendario guardarCalendario(Calendario calendario);
 	
 	public Calendario borrarCalendario(long id);
+	
+	public List<Calendario> findTecnicoCalendario(long id);
 
 }
