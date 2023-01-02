@@ -59,6 +59,7 @@ public class AsignacionController {
 		//ejercicio, agregar manejo de errores en este metodo
 		@DeleteMapping("asignaciones/{id}")
 		public Asignacion delete(@PathVariable long id) {
+			System.out.println("Funciona ?¿");
 			return servicio.borrarAsignacion(id);
 		}
 		
