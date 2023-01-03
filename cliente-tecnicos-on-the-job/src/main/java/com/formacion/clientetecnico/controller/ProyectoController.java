@@ -125,6 +125,11 @@ public class ProyectoController {
 		response.put("mensaje","El proyecto ha sido eliminado con éxito!");
 		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.OK);
 	}
+	
+	@GetMapping("proyectosId")
+	public List<Number> indexId(){
+		return servicio.indexProyectoId();
+	}
 		
 	
 }

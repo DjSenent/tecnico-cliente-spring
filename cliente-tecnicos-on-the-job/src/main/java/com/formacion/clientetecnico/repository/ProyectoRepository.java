@@ -11,5 +11,6 @@ import com.formacion.clientetecnico.entity.Tecnico;
 
 public interface ProyectoRepository extends CrudRepository<Proyecto, Long>{
 	
-
+	@Query(value = "SELECT id FROM proyectos", nativeQuery = true)
+	public List<Number> indexProyectoId();
 }

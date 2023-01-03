@@ -15,6 +15,8 @@ public interface ProyectoService {
 	
 	public Proyecto borrarProyecto(long id);
 	
+	public List<Number> indexProyectoId();
+	
 	//public List<Tecnico> mostarTecnicosAsignados(long id);
 	
 	

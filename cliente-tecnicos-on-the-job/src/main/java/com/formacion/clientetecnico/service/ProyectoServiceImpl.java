@@ -43,4 +43,10 @@ public class ProyectoServiceImpl implements ProyectoService{
 		return proyectoBorrado;
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public List<Number> indexProyectoId() {
+		return (List<Number>) repositorio.indexProyectoId();
+	}
+
 }
