@@ -46,5 +46,10 @@ public class CalendarioServiceImpl implements CalendarioService{
 	public List<Calendario> findTecnicoCalendario(long id) {
 		return repositorio.findTecnicoCalendario(id);
 	}
-
+	@Override
+	@Transactional(readOnly = true)
+	public List<Calendario> findCalendarioPorAnyo(int anyo) {
+		return repositorio.findCalendarioPorAnyo(anyo);
+	}
+	
 }

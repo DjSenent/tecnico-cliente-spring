@@ -70,8 +70,8 @@ public class CalendarioController {
 			response.put("error",e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		response.put("mensaje","El proyecto se ha guardado con éxito!");
-		response.put("proyecto",calendarioNew);
+		response.put("mensaje","El calendario se ha guardado con éxito!");
+		response.put("calendario",calendarioNew);
 		
 		return new ResponseEntity<Map<String,Object>>(response,HttpStatus.CREATED);
 	}
@@ -130,5 +130,8 @@ public class CalendarioController {
 	}
 	
 	
-
+	@GetMapping("calendarios/anyo/{anyo}")
+	public List<Calendario> getCalendarioPorAnyo(@PathVariable int anyo){
+		return servicio.findCalendarioPorAnyo(anyo);
+	}
 }

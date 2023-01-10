@@ -15,5 +15,5 @@ public interface CalendarioService {
 	public Calendario borrarCalendario(long id);
 	
 	public List<Calendario> findTecnicoCalendario(long id);
-
+	public List<Calendario> findCalendarioPorAnyo(int anyo);
 }

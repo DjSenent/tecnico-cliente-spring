@@ -11,5 +11,6 @@ public interface CalendarioRepository extends CrudRepository<Calendario, Long>{
 	
 	@Query(value = "SELECT * FROM calendarios WHERE id_tecnico = ?1", nativeQuery = true)
 	public List<Calendario> findTecnicoCalendario(long id);
-
+	@Query(value = "SELECT * FROM calendarios WHERE anyo = ?1", nativeQuery = true)
+	public List<Calendario> findCalendarioPorAnyo(int anyo);
 }
